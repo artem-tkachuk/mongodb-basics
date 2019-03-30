@@ -57,10 +57,13 @@ db.movieDetails.updateOne({
 		"rated": ""
 	}
 });
+
+
 let reviewText1 = [
 	"The Martian is a great movie",
 	"Filmed by a great man!"
 ].join()
+
 db.movieDetails.updateOne({
 	"_id": ObjectId("5d9dbf35f50707afac734a68")
 }, {
@@ -82,14 +85,6 @@ db.movieDetails.updateOne({
 	}
 }, {
 	"upsert": true
-});
-
-db.movieDetails.updateMany({
-	"rated": null
-}, {
-	$unset: {
-		"rated": ""
-	}
 });
 
 db.movieDetails.updateOne({
